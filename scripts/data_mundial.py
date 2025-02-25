@@ -29,7 +29,7 @@ def get_matches(year):
     df_football['year'] = year
     return df_football
 
-def get_matche_2022():
+def get_match_2022():
 
     web = 'https://web.archive.org/web/20221115040351/https://en.wikipedia.org/wiki/2022_FIFA_World_Cup#Group_stage'
     response = requests.get(web)
@@ -59,6 +59,6 @@ df_fifa = pd.concat(fifa, ignore_index=True)
 df_fifa.to_csv('fifa_worldcup_historical_data.csv', index=False)
 
 # fixture
-df_fixture = get_matche_2022()
+df_fixture = get_match_2022()
 df_fixture.to_csv('fifa_worldcup_fixture.csv', index=False)
 
